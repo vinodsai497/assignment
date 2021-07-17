@@ -1,0 +1,173 @@
+// This is a code in JavaScript:
+document.getElementById("stuff2").innerHTML = "This is also a sentence that gives no information";
+
+/* JavaScript
+  code  */
+
+document.getElementById("test_el").innerHTML = "Some text";
+document.getElementById("test_el2").innerHTML = "More text";
+
+const salaries = {
+    Jack: 24000,
+    Paul: 34000,
+    Monica: 55000
+}
+
+// using for...in
+for (let i in salaries) {
+
+    // add a currency symbol
+    let salary = "$" + salaries[i];
+
+    // display the values
+    console.log(`${i} : ${salary}`);
+}
+
+    var person = {
+        firstName: "James",
+                lastName: "Bond",
+                age: 25,
+                getFullName: function () {
+                    return this.firstName + ' ' + this.lastName
+                    }
+            };
+
+		document.getElementById("p1").innerHTML = person.firstName;
+		document.getElementById("p2").innerHTML = person.lastName;
+
+		document.getElementById("p3").innerHTML = person["firstName"];
+		document.getElementById("p4").innerHTML = person["lastName"];
+
+        document.getElementById("p5").innerHTML = person.getFullName();
+
+
+
+// hoisting
+function codeHoist() {
+    a = 10;
+    let b = 50;
+}
+codeHoist();
+
+console.log(a); // 10
+console.log(b); // ReferenceError : b is not defined
+
+
+"use strict";
+x = { p1: 10, p2: 20 };   // This will cause an error (x is not defined).
+
+
+var Text = 'hello';
+
+
+function setInput(button) {
+    var buttonVal = button.name,
+        textbox = document.getElementById('input_' + buttonVal);
+    textbox.value = Text;
+}
+
+    
+const person = {
+    fullName: function () {
+        return this.firstName + " " + this.lastName;
+    }
+}
+
+const person1 = {
+    firstName: "John",
+    lastName: "Doe"
+}
+
+document.getElementById("demo").innerHTML = person.fullName.apply(person1); 
+
+
+const person = {
+    fullName: function (city, country) {
+        return this.firstName + " " + this.lastName + "," + city + "," + country;
+    }
+}
+
+const person1 = {
+    firstName: "John",
+    lastName: "Doe"
+}
+
+const person2 = {
+    firstName: "Mary",
+    lastName: "Doe"
+}
+
+document.getElementById("demo").innerHTML = person.fullName.call(person1, "Oslo", "Norway");
+
+
+let count = 0;
+const button = document.getElementById("increment");
+const button2 = document.getElementById("decrement");
+const textHolder = document.getElementById("count");
+textHolder.innerHTML = count;
+
+button.addEventListener("click", function () {
+    textHolder.innerHTML = ++count;
+});
+
+button2.addEventListener("click", function () {
+    textHolder.innerHTML = --count;
+});
+
+// Define an object
+var obj = { counter: 0 };
+
+// Define Setters and Getters
+Object.defineProperty(obj, "reset", {
+    get: function () { this.counter = 0; }
+});
+Object.defineProperty(obj, "increment", {
+    get: function () { this.counter++; }
+});
+Object.defineProperty(obj, "decrement", {
+    get: function () { this.counter--; }
+});
+Object.defineProperty(obj, "add", {
+    set: function (value) { this.counter += value; }
+});
+Object.defineProperty(obj, "subtract", {
+    set: function (value) { this.counter -= value; }
+});
+
+
+function Student() {
+    this.name = 'John';
+    this.gender = 'M';
+}
+
+var studObj = new Student();
+
+console.log(Student.prototype);
+console.log(studObj.prototype);
+console.log(studObj._proto_);
+
+console.log(typeof Student.prototype);
+console.log(typeof studObj._proto_);
+
+console.log(Student.prototype === studObj._proto_);
+
+
+function Emptyvalidation(inputtxt) {
+    if (inputtxt.value.length == 0) {
+        document.inputtxt.style.background = 'Yellow';
+    }
+    else {
+        document.inputtxt.style.background = 'White';
+    }
+    return error;
+}
+
+function updateLabel() {
+    var addend1 = getNumber1();
+    console.log('addend1:', addend1);
+    var addend2 = getNumber2();
+    console.log('addend2:', addend2);
+    var sum = addend1 + addend2;
+    console.log('sum:', sum);
+    label.textContent = addend1 + ' + ' + addend2 + ' = ' + sum;
+}
